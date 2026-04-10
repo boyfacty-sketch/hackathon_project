@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard">
+
+        <h1>Welcome to Your Dashboard</h1>
+
+        <!-- Summary Cards -->
+        <div class="summary">
+            <div class="card">
+                <h3>Total Reports</h3>
+                <p>5</p>
+            </div>
+
+            <div class="card">
+                <h3>Prescriptions</h3>
+                <p>3</p>
+            </div>
+
+            <div class="card">
+                <h3>Shared Records</h3>
+                <p>2</p>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="actions">
+            <button onclick="goToUpload()">Upload Record</button>
+            <button onclick="goToHistory()">View History</button>
+            <button onclick="goToShare()">Share Records</button>
+        </div>
+
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>

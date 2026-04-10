@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Record System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+    <style>
+        .hero, .features {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: 1s ease;
+        }
+
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Login Modal Styling */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            left: 0; top: 0; width: 100%; height: 100%; 
+            background-color: rgba(0,0,0,0.5); 
+        }
+        .modal-content {
+            background-color: white; margin: 10% auto; padding: 20px;
+            width: 300px; border-radius: 10px; text-align: center;
+        }
+        .modal-content input {
+            width: 90%; padding: 10px; margin: 10px 0; border: 1px solid #ccc;
+        }
+        .modal-content button {
+            width: 100%; padding: 10px; background: #28a745; color: white; border: none; cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <h2>HealthVault</h2>
+        <button onclick="toggleModal()">Get Started</button>
+    </nav>
+
+    <section class="hero show"> <h1>Your Medical Records, Simplified</h1>
+        <p>Store, manage and share your health data securely anytime, anywhere.</p>
+        <button onclick="toggleModal()">Go to Dashboard</button>
+    </section>
+
+    <section class="features show">
+        <div class="card">
+            <h3>Upload Records</h3>
+            <p>Easily upload prescriptions and reports.</p>
+        </div>
+        <div class="card">
+            <h3>Track History</h3>
+            <p>View your complete medical timeline.</p>
+        </div>
+        <div class="card">
+            <h3>Secure Sharing</h3>
+            <p>Share records with doctors instantly.</p>
+        </div>
+    </section>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <h3>Login to HealthVault</h3>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button onclick="handleLogin()">Login</button>
+            <button onclick="toggleModal()" style="background:#666; margin-top:5px;">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Modal kholne/band karne ke liye
+        function toggleModal() {
+            const modal = document.getElementById('loginModal');
+            modal.style.display = (modal.style.display === "block") ? "none" : "block";
+        }
+
+        // Asli Backend Connection
+        async function handleLogin() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                // Ye tere Node server ko call karega
+                const response = await axios.post('http://localhost:5000/api/auth/login', {
+                    email,
+                    password
+                });
+
+                alert("Login Success! ✅");
+                localStorage.setItem('token', response.data.token);
+                
+                // Login hone ke baad Dashboard pe bhej do
+                window.location.href = "dashboard.html"; 
+
+            } catch (error) {
+                console.error("Login failed", error);
+                alert("Login Failed: " + (error.response?.data?.message || "Check your backend"));
+            }
+        }
+
+        // Animation logic (jo pehle tha)
+        window.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('.hero').classList.add('show');
+            document.querySelector('.features').classList.add('show');
+        });
+    </script>
+
+</body>
+</html>

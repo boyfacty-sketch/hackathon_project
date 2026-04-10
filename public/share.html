@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Records</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="share-container">
+
+    <h1>Share Medical Records</h1>
+
+    <input type="text" placeholder="Enter Doctor Email">
+
+    <h3>Select Records</h3>
+
+    <div class="records">
+        <label><input type="checkbox"> Blood Test Report</label>
+        <label><input type="checkbox"> Prescription - Fever</label>
+        <label><input type="checkbox"> X-Ray Scan</label>
+    </div>
+
+    <button onclick="shareRecords()">Share</button>
+
+    <br><br>
+
+    <button onclick="goToDashboard()">Back to Dashboard</button>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

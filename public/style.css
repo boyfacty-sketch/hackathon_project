@@ -1,0 +1,202 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #020617);
+    color: white;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+}
+
+.navbar h2 {
+    color: #38bdf8;
+}
+
+.navbar button {
+    background: transparent;
+    border: 1px solid #38bdf8;
+    padding: 10px 18px;
+    color: #38bdf8;
+    cursor: pointer;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    background: linear-gradient(to right, #38bdf8, #22c55e);
+    background-clip: text; 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+/* Button */
+.hero button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: #22c55e;
+    border: none;
+    cursor: pointer;
+}
+
+/* Features */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 60px;
+}
+
+.card {
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+/* HOVER FIX */
+.card:hover {
+    transform: translateY(-10px);
+}
+/* Dashboard */
+.dashboard {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.summary {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.actions button {
+    margin: 10px;
+    padding: 12px 20px;
+    background: #3b82f6;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+/* Upload Page */
+.upload-container {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.upload-form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: auto;
+    gap: 15px;
+}
+
+.upload-form input,
+.upload-form select {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.upload-form button {
+    padding: 12px;
+    background: #22c55e;
+    border: none;
+    cursor: pointer;
+}
+/* History Page */
+.history-container {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.timeline {
+    position: relative;
+    margin: 40px auto;
+    width: 80%;
+}
+
+/* Vertical Line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background: #38bdf8;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    margin: 30px 0;
+    position: relative;
+}
+
+.timeline-date {
+    position: absolute;
+    left: 20%;
+    width: 120px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.timeline-content {
+    margin-left: 55%;
+    background: #1e293b;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: left;
+}
+/* Share Page */
+.share-container {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.share-container input {
+    padding: 10px;
+    width: 250px;
+    margin: 15px 0;
+    border-radius: 5px;
+    border: none;
+}
+
+.records {
+    margin: 20px 0;
+}
+
+.records label {
+    display: block;
+    margin: 8px 0;
+}
+
+.share-container button {
+    padding: 12px 20px;
+    background: #3b82f6;
+    border: none;
+    color: white;
+    cursor: pointer;
+}

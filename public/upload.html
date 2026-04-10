@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Record</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="upload-container">
+
+    <h1>Upload Medical Record</h1>
+
+    <form class="upload-form">
+
+        <input type="text" placeholder="Enter Record Title" required>
+
+        <select>
+            <option value="">Select Type</option>
+            <option value="report">Report</option>
+            <option value="prescription">Prescription</option>
+        </select>
+
+        <input type="date">
+
+        <input type="file">
+
+        <button type="submit">Upload</button>
+
+    </form>
+
+    <button onclick="goToDashboard()">Back to Dashboard</button>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
